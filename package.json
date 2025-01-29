@@ -1,0 +1,12 @@
+{
+  "name": "typescript-branas",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:josanjohnata/typescript-branas.git",
+  "author": "John Pontes <jpontes@questrade.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  }
+}
