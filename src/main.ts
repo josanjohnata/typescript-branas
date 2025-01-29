@@ -1,5 +1,6 @@
-import Book from "./Book";
+class Book {
+  constructor (public title: string) {}
+}
 
-const book = new Book("Clean Code", "Robert C. Martin");
-
-console.log(book);
+let book: Book;
+book = new Book('Clean Code');

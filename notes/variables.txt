@@ -1,0 +1,10 @@
+# Tipos em Variáveis
+
+// Quando as variáveis são declaradas, o TypeScript tenta inferir o tipo da variável. Não sendo nescessário tipar a variável.
+const student = "Josan"; // string
+const age = 27; // number
+const isDeveloper = true; // boolean
+
+// Porém quando o tipo não for inferido, é necessário tipar a variável.
+let email: string;
+email = "josan@email.com";
