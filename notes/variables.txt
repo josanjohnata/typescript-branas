@@ -8,3 +8,19 @@ const isDeveloper = true; // boolean
 // Porém quando o tipo não for inferido, é necessário tipar a variável.
 let email: string;
 email = "josan@email.com";
+
+
+// Na função `init` como o parametro não foi tipado, o TS aplica o error de explicit any, que siguinifica que esse parametro 
+// pode ser qualquer coisa, e isso não é uma boa pratica.
+function init (port) {
+  console.log(port);
+}
+
+init(80);
+
+// Nesse caso ficará assim, garantindo o tipo de valor correto, se for passado um tipo diferente o TS retorna um erro.
+function init (port: number) {
+  console.log(port);
+}
+
+init(80);
