@@ -9,7 +9,7 @@ const isDeveloper = true; // boolean
 let email: string;
 email = "josan@email.com";
 
-
+# Tipos em Funções
 // Na função `init` como o parametro não foi tipado, o TS aplica o error de explicit any, que siguinifica que esse parametro 
 // pode ser qualquer coisa, e isso não é uma boa pratica.
 function init (port) {
@@ -24,3 +24,21 @@ function init (port: number) {
 }
 
 init(80);
+
+# Tipos em Classes
+// Na declaração da classe os membros de classes deve ser tipados individualmente assim como as variáveis.
+// Com essa tipagem o TS impede que algum valor sejá passado com o tipo errado, assim sendo mais uma 
+// proteção para evitar erros em desenvolvimento.
+
+class Person {
+  name: string;
+  age: number;
+
+  constructor (name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+const person = new Person("John Connor", 30);
+console.log(person);
