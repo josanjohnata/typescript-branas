@@ -42,3 +42,27 @@ class Person {
 
 const person = new Person("John Connor", 30);
 console.log(person);
+
+# Arrays
+// Se o array é inicializado, mesmo sendo vazio, ele tem a inferencia. Porém o array é um pouco perigoso
+// porque ele tem um tipo dentro dele. Pois o array do Javascript pode conter qualquer coisa, mas o recomendado
+// é adicionar o tipo do valor de dentro do array. Com isso o TS te impede de adicionar um valor diferente do tipo esperado.
+// OBS.: O Typescript também te permite que você atribua um objeto com as mesmas caracteristicas daquela Class.
+
+const numbers: number[] = [];
+numbers[0] = 10;
+numbers[1] = 11;
+numbers[2] = 12;
+
+// Assim, podemos usar o mesmo principio para tipar a Class
+class Person {
+  name: string;
+
+  constructor (name: string) {
+    this.name = name;
+  }
+}
+
+const people: Person[] = [];
+people[0] = new Person('John');
+console.log(people); 
