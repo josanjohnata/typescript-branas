@@ -66,3 +66,87 @@ class Person {
 const people: Person[] = [];
 people[0] = new Person('John');
 console.log(people); 
+
+// Em TypeScript, interface e type são usados para definir tipos, mas têm algumas diferenças importantes:
+
+# 1. Sintaxe
+// Ambos podem ser usados para definir estruturas semelhantes:
+
+// Com interface:
+```
+interface User {
+  name: string;
+  age: number;
+}
+```
+
+// Com type:
+```
+type User = {
+  name: string;
+  age: number;
+};
+````
+
+# 2. Extensibilidade
+// A principal diferença é que interface pode ser expandida (ou seja, pode ser estendida por outras interfaces
+// ou mesclada automaticamente), enquanto type é fixo e não pode ser redefinido.
+
+# Interface pode ser estendida:
+```
+interface Person {
+  name: string;
+}
+```
+```
+interface Employee extends Person {
+  salary: number;
+}
+```
+
+# Type usa & para composição:
+```
+type Person = {
+  name: string;
+};
+```
+```
+type Employee = Person & {
+  salary: number;
+};
+```
+
+# 3. Mesclagem de declarações (Declaration Merging)
+// Interfaces podem ser mescladas automaticamente se forem declaradas com o mesmo nome.
+
+```
+interface User {
+  name: string;
+}
+```
+```
+interface User {
+  age: number;
+}
+```
+
+// Resultado: { name: string; age: number; }
+
+// Já type não permite isso, e uma redefinição causaria erro.
+# 4. Usos especiais
+
+// type pode ser usado para unir tipos (Union Types):
+```
+type ID = string | number;
+```
+
+# Interfaces não suportam esse tipo de união.
+- type pode ser usado para tuplas e tipos mais complexos:
+```
+type Tuple = [number, string];
+```
+
+# Quando usar cada um?
+- Use interface se você precisar de algo que possa ser estendido ou mesclado.
+- Use type para uniões, tuplas ou quando precisar de mais flexibilidade.
+// Para React, geralmente interfaces são usadas para props, mas type também funciona bem.
